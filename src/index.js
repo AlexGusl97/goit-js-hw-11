@@ -24,10 +24,8 @@ refs.form.addEventListener('submit', onInputName);
 
 function onInputName(evt) {
   evt.preventDefault();
-  //  const name = evt.currentTarget.elements.searchQuery.value;
   const name = refs.input.value;
   if (!name) {
-    // refs.list.innerHTML = '';
     return;
   }
   page = 1;
@@ -48,7 +46,6 @@ function onInputName(evt) {
       observer.observe(refs.guard);
     })
     .catch(createErrorMessage);
-  // .catch(err=>console.error(err));
 }
 
 function createMarkup(data) {
@@ -122,13 +119,3 @@ function onInfinityLoad(entries) {
 }
 
 const lightbox = new SimpleLightbox('.gallery a');
-
-// Плавного скрола я не зрозумів
-// const { height: cardHeight } = document
-//   .querySelector('.gallery')
-//   .firstElementChild.getBoundingClientRect();
-
-// window.scrollBy({
-//   top: cardHeight * 2,
-//   behavior: 'smooth',
-// });
